@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autolakovna Milan Kubát – Kyselka, Karlovy Vary</title>
+<meta name="description" content="Autolakovna a karosářské práce v Kyselce u Karlových Varů. Lakování, opravy karoserie a příprava vozidel před lakováním.">
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+  :root {
+    --c-primary: #b31217;
+    --c-primary-dark: #7a0c10;
+    --c-accent: #e74c3c;
+    --c-bg: #fff5f5;
+    --c-bg-alt: #fbe1e1;
+    --c-text: #202126;
+    --c-text-light: #5a5c66;
+    --c-white: #ffffff;
+    --c-border: #e6e4df;
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(0,0,0,.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; color:var(--c-text); background:var(--c-bg); line-height:1.6; }
+  a { color:inherit; text-decoration:none; }
+  img { max-width:100%; display:block; }
+  .wrap { max-width:1140px; margin:0 auto; padding:0 24px; }
+
+  header {
+    position: sticky; top:0; z-index:50;
+    background: var(--c-white);
+    border-bottom: 1px solid var(--c-border);
+  }
+  .headbar { display:flex; align-items:center; justify-content:space-between; padding:14px 24px; max-width:1140px; margin:0 auto; }
+  .logo { display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.15rem; color:var(--c-primary-dark); }
+  .logo-badge { width:38px; height:38px; border-radius:10px; background:var(--c-primary); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.1rem; }
+  .head-cta { background:var(--c-primary); color:#fff; padding:10px 18px; border-radius:999px; font-weight:700; font-size:.92rem; white-space:nowrap; }
+  .head-cta:hover { background:var(--c-primary-dark); }
+
+  .hero { background: linear-gradient(155deg, var(--c-bg-alt), var(--c-bg) 60%); padding:64px 0 56px; }
+  .hero-grid { display:grid; grid-template-columns: 1.3fr 1fr; gap:40px; align-items:center; }
+  .badge { display:inline-block; background:var(--c-accent); color:#fff; font-size:.78rem; font-weight:700; padding:6px 14px; border-radius:999px; letter-spacing:.03em; margin-bottom:18px; }
+  .hero h1 { font-size:2.5rem; line-height:1.15; margin:0 0 18px; color:var(--c-primary-dark); }
+  .hero p.lead { font-size:1.1rem; color:var(--c-text-light); margin:0 0 28px; max-width:52ch; }
+  .cta-row { display:flex; flex-wrap:wrap; gap:14px; margin-bottom:10px; }
+  .btn { padding:14px 24px; border-radius:10px; font-weight:700; font-size:.98rem; display:inline-flex; align-items:center; gap:8px; }
+  .btn-primary { background:var(--c-primary); color:#fff; box-shadow: var(--shadow); }
+  .btn-primary:hover { background:var(--c-primary-dark); }
+  .btn-outline { background:#fff; color:var(--c-primary-dark); border:2px solid var(--c-primary); }
+  .btn-outline:hover { background:var(--c-bg-alt); }
+  .stat-card { background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:28px; border:1px solid var(--c-border); }
+  .stat-card h3 { margin:0 0 14px; font-size:1.05rem; color:var(--c-primary-dark); }
+  .stat-row { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px dashed var(--c-border); font-size:.92rem; }
+  .stat-row:last-child { border-bottom:none; }
+  .stat-num { font-weight:800; color:var(--c-primary); }
+
+  section { padding:60px 0; }
+  .section-alt { background: var(--c-bg-alt); }
+  h2 { font-size:1.9rem; color:var(--c-primary-dark); margin:0 0 12px; text-align:center; }
+  .section-intro { text-align:center; color:var(--c-text-light); max-width:62ch; margin:0 auto 40px; }
+
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .card { background:#fff; border:1px solid var(--c-border); border-radius:var(--radius); padding:26px; box-shadow: 0 4px 14px rgba(0,0,0,.04); }
+  .card .icon { width:46px; height:46px; border-radius:10px; background:var(--c-bg-alt); color:var(--c-primary); display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:14px; }
+  .card h3 { margin:0 0 8px; font-size:1.1rem; color:var(--c-text); }
+  .card p { margin:0; color:var(--c-text-light); font-size:.95rem; }
+
+  .gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .gallery .ph { aspect-ratio:4/3; border-radius:var(--radius); background:var(--c-bg-alt); border:2px dashed var(--c-border); display:flex; align-items:center; justify-content:center; color:var(--c-primary); font-size:2rem; flex-direction:column; gap:6px; text-align:center; padding:10px; }
+  .gallery .ph span { font-size:.78rem; color:var(--c-text-light); font-weight:600; }
+  .gallery figure { margin:0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); position:relative; background:#000; }
+  .gallery figure img { aspect-ratio:4/3; width:100%; height:100%; object-fit:cover; }
+  .gallery figcaption { position:absolute; left:0; right:0; bottom:0; padding:10px 14px; background:linear-gradient(0deg, rgba(0,0,0,.65), rgba(0,0,0,0)); color:#fff; font-size:.85rem; font-weight:600; }
+
+  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; counter-reset:step; }
+  .step { background:#fff; border-radius:var(--radius); padding:26px 22px; border:1px solid var(--c-border); position:relative; }
+  .step .num { width:36px; height:36px; border-radius:50%; background:var(--c-primary); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; margin-bottom:14px; }
+  .step h3 { margin:0 0 8px; font-size:1.02rem; }
+  .step p { margin:0; font-size:.9rem; color:var(--c-text-light); }
+
+  .about { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+  .about-photo { aspect-ratio:1/1; background:var(--c-bg-alt); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; color:var(--c-primary); font-size:3rem; overflow:hidden; box-shadow:var(--shadow); }
+  .about-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+  .about h2 { text-align:left; }
+  .about p { color:var(--c-text-light); }
+  .seo-text { color:var(--c-text-light); font-size:.96rem; }
+  .seo-text h3 { color:var(--c-primary-dark); font-size:1.15rem; margin-top:28px; }
+
+  .refs { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .ref-card { background:#fff; border-radius:var(--radius); border:1px solid var(--c-border); padding:26px; }
+  .ref-card .stars { color:#f5a623; margin-bottom:10px; font-size:1rem; }
+  .ref-card p { color:var(--c-text-light); font-style:italic; margin:0 0 14px; font-size:.95rem; }
+  .ref-card .who { font-weight:700; font-size:.9rem; color:var(--c-text); }
+  .ref-note { text-align:center; color:var(--c-text-light); font-size:.82rem; margin-top:18px; }
+
+  .cta-section { background: linear-gradient(135deg, var(--c-primary), var(--c-primary-dark)); color:#fff; text-align:center; }
+  .cta-section h2 { color:#fff; }
+  .cta-section p { color:rgba(255,255,255,.9); max-width:56ch; margin:0 auto 30px; }
+  .cta-section .cta-row { justify-content:center; }
+  .cta-section .btn-outline { background:transparent; color:#fff; border-color:#fff; }
+  .cta-section .btn-outline:hover { background:rgba(255,255,255,.15); }
+  .cta-section .btn-primary { background:#fff; color:var(--c-primary-dark); }
+  .cta-section .btn-primary:hover { background:#f2f2f2; }
+
+  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+  .contact-list { list-style:none; padding:0; margin:0 0 26px; }
+  .contact-list li { display:flex; gap:12px; padding:12px 0; border-bottom:1px solid var(--c-border); font-size:.98rem; }
+  .contact-list li b { color:var(--c-primary-dark); min-width:110px; display:inline-block; }
+  .map-ph { background:var(--c-bg-alt); border:2px dashed var(--c-border); border-radius:var(--radius); height:100%; min-height:220px; display:flex; align-items:center; justify-content:center; color:var(--c-primary); font-size:2.4rem; }
+
+  footer { background:#20222a; color:#c9cad2; padding:36px 0; font-size:.88rem; }
+  footer .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  footer a { color:#fff; }
+
+  @media (max-width: 860px) {
+    .hero-grid, .about, .contact-grid { grid-template-columns:1fr; }
+    .cards { grid-template-columns:repeat(2,1fr); }
+    .gallery { grid-template-columns:repeat(2,1fr); }
+    .steps { grid-template-columns:repeat(2,1fr); }
+    .refs { grid-template-columns:1fr; }
+    .hero h1 { font-size:1.9rem; }
+    .headbar { flex-wrap:wrap; gap:10px; }
+  }
+  @media (max-width: 480px) {
+    .cards, .gallery, .steps { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="headbar">
+    <div class="logo"><span class="logo-badge">A</span> Autolakovna Kubát</div>
+    <a href="tel:+420724126257" class="head-cta">📞 724 126 257</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">Autolakovna a karosářství</span>
+      <h1>Rychle, kvalitně a bez starostí</h1>
+      <p class="lead">Provádíme lakování automobilů, opravy karoserie a přípravu vozu před lakováním. Specializujeme se také na renovace historických vozidel a veteránů a řešíme pojistné události všech pojišťoven. Léta zkušeností v oboru autolakýrnictví v Kyselce u Karlových Varů.</p>
+      <div class="cta-row">
+        <a href="#kontakt" class="btn btn-primary">Nezávazná poptávka</a>
+        <a href="tel:+420724126257" class="btn btn-outline">Zavolejte nám</a>
+        <a href="mailto:autolakykubat@volny.cz" class="btn btn-outline">Napsat e-mail</a>
+      </div>
+    </div>
+    <div class="stat-card">
+      <h3>Autolakovna Milan Kubát</h3>
+      <div class="stat-row"><span>Obor</span><span class="stat-num">autolakýrnictví</span></div>
+      <div class="stat-row"><span>Region</span><span class="stat-num">Karlovy Vary a okolí</span></div>
+      <div class="stat-row"><span>Přístup</span><span class="stat-num">osobní jednání</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="sluzby">
+  <div class="wrap">
+    <h2>Naše služby</h2>
+    <p class="section-intro">Lakýrnické a karosářské služby pro osobní i užitková vozidla.</p>
+    <div class="cards">
+      <div class="card"><div class="icon">🎨</div><h3>Lakování karoserie</h3><p>Kompletní i dílčí lakování vozidel v barvě dle výrobce.</p></div>
+      <div class="card"><div class="icon">🔨</div><h3>Karosářské opravy</h3><p>Opravy pomačkaných a poškozených částí karoserie.</p></div>
+      <div class="card"><div class="icon">🛠️</div><h3>Příprava před lakováním</h3><p>Broušení, tmelení a příprava povrchu pro dokonalý výsledek.</p></div>
+      <div class="card"><div class="icon">🚗</div><h3>Oprava po nehodě</h3><p>Kompletní opravy karoserie po dopravní nehodě.</p></div>
+      <div class="card"><div class="icon">🛡️</div><h3>Pojistné události</h3><p>Vyřídíme pojistnou událost s libovolnou pojišťovnou – od nahlášení škody až po opravu vozidla.</p></div>
+      <div class="card"><div class="icon">✨</div><h3>Renovace laku</h3><p>Leštění a obnova původního laku vozidla.</p></div>
+      <div class="card"><div class="icon">🏆</div><h3>Renovace veteránů</h3><p>Kompletní renovace historických vozidel a veteránů – karoserie i lak do původního nebo požadovaného odstínu.</p></div>
+      <div class="card"><div class="icon">🧰</div><h3>Drobné opravy</h3><p>Opravy odřenin, škrábanců a menších poškození.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="fotogalerie">
+  <div class="wrap">
+    <h2>Fotogalerie</h2>
+    <p class="section-intro">Ukázky z naší dílny – lakování a renovace historických vozidel a veteránů.</p>
+    <div class="gallery">
+      <figure><img src="img/veteran-02.jpg" alt="Renovace veterána – čerstvě lakovaná karoserie v lakovně"><figcaption>Čerstvě nalakovaná karoserie</figcaption></figure>
+      <figure><img src="img/veteran-01.jpg" alt="Renovace historického vozidla v lakovně"><figcaption>Renovace v lakovně</figcaption></figure>
+      <figure><img src="img/veteran-06.jpg" alt="Renovovaný veterán Tatra po dokončení"><figcaption>Hotová renovace veterána</figcaption></figure>
+      <figure><img src="img/veteran-04.jpg" alt="Karosářské práce na historickém vozidle"><figcaption>Karosářské práce</figcaption></figure>
+      <figure><img src="img/veteran-03.jpg" alt="Dokončený veterán po renovaci"><figcaption>Po dokončení renovace</figcaption></figure>
+      <figure><img src="img/veteran-05.jpg" alt="Předání hotového vozu zákazníkovi"><figcaption>Předání hotového vozu</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="postup">
+  <div class="wrap">
+    <h2>Jak probíhá spolupráce</h2>
+    <p class="section-intro">Od prvního kontaktu až po předání hotové zakázky – jasně a bez komplikací.</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Pošlete poptávku</h3><p>Napište nebo zavolejte – stačí pár slov o tom, co potřebujete.</p></div>
+      <div class="step"><div class="num">2</div><h3>Připravíme nabídku</h3><p>Prohlédneme vůz, navrhneme postup opravy a upřesníme cenu.</p></div>
+      <div class="step"><div class="num">3</div><h3>Opravíme a nalakujeme</h3><p>Karoserii opravíme, připravíme a nalakujeme v odstínu dle výrobce vozidla.</p></div>
+      <div class="step"><div class="num">4</div><h3>Dodáme</h3><p>Hotové vozidlo zkontrolujeme a předáme zákazníkovi.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt" id="o-nas">
+  <div class="wrap about">
+    <div class="about-photo"><img src="img/veteran-05.jpg" alt="Milan Kubát u opraveného vozidla"></div>
+    <div>
+      <h2>O naší firmě</h2>
+      <p>Autolakovna Milan Kubát působí v Kyselce u Karlových Varů a věnuje se lakování a karosářským opravám vozidel. Klademe důraz na kvalitní zpracování a osobní přístup ke každé zakázce.</p>
+      <p>Kromě běžných oprav a lakování se dlouhodobě věnujeme i renovacím historických vozidel a veteránů – od karosářských prací přes přípravu povrchu až po nástřik v původním nebo požadovaném odstínu.</p>
+      <div class="seo-text">
+        <h3>Autolakovna Karlovy Vary a okolí</h3>
+        <p>Nabízíme lakýrnické a karosářské služby pro zákazníky z Kyselky, Karlových Varů a okolí – od drobných retuší po kompletní opravu karoserie po nehodě i renovaci historických vozidel a veteránů.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reference">
+  <div class="wrap">
+    <h2>Reference</h2>
+    <p class="section-intro">Ukázkové reference ilustrující typ spolupráce – po realizaci prvních zakázek je nahradíme reálnými hodnoceními zákazníků.</p>
+    <div class="refs">
+      <div class="ref-card"><div class="stars">★★★★★</div><p>„Auto po nehodě vypadá jako nové, barva sedí dokonale."</p><div class="who">Zákazník, Karlovy Vary</div></div>
+      <div class="ref-card"><div class="stars">★★★★★</div><p>„Rychlé vyřízení a solidní cena."</p><div class="who">Majitel firemního vozu, Kyselka</div></div>
+    </div>
+    <p class="ref-note">* Ukázkové reference, nikoli citace konkrétních osob.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrap">
+    <h2>Máte vozidlo k opravě nebo renovaci?</h2>
+    <p>Ať už jde o opravu po nehodě, kompletní lakování nebo renovaci veterána, rádi si vaše vozidlo prohlédneme a připravíme nabídku na míru.</p>
+    <div class="cta-row">
+      <a href="#kontakt" class="btn btn-primary">Nezávazná poptávka</a>
+      <a href="tel:+420724126257" class="btn btn-outline">Zavolejte nám</a>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 style="text-align:left">Kontakt</h2>
+      <ul class="contact-list">
+        <li><b>Firma</b> Autolakovna Milan Kubát</li>
+        <li><b>Adresa</b> Radošov 197, 362 72 Kyselka, okres Karlovy Vary</li>
+        <li><b>Telefon</b> <a href="tel:+420724126257">724 126 257</a></li>
+        <li><b>E-mail</b> <a href="mailto:autolakykubat@volny.cz">autolakykubat@volny.cz</a></li>
+      </ul>
+      <div class="cta-row">
+        <a href="tel:+420724126257" class="btn btn-primary">Zavolejte nám</a>
+        <a href="mailto:autolakykubat@volny.cz" class="btn btn-outline">Napsat e-mail</a>
+      </div>
+    </div>
+    <div class="map-ph" style="padding:0; overflow:hidden;">
+      <iframe src="https://www.google.com/maps?q=Rado%C5%A1ov+197%2C+362+72+Kyselka&output=embed" width="100%" height="100%" style="border:0; min-height:220px; border-radius:inherit;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; 2026 Autolakovna Milan Kubát</div>
+    <div>Radošov 197, Kyselka | <a href="tel:+420724126257">724 126 257</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
