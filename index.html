@@ -1,272 +1,792 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Autolakovna Milan Kubát – Kyselka, Karlovy Vary</title>
-<meta name="description" content="Autolakovna a karosářské práce v Kyselce u Karlových Varů. Lakování, opravy karoserie a příprava vozidel před lakováním.">
+<title>Ivan Vernieri — Powerlifting Coaching, Online &amp; 1‑on‑1</title>
+<meta name="description" content="Powerlifting coaching with Ivan Vernieri. Online coaching worldwide and 1-on-1 in-person sessions in Italy. Custom programming for squat, bench and deadlift.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ivan Vernieri — Powerlifting Coaching, Online &amp; 1‑on‑1">
+<meta property="og:description" content="Custom powerlifting programming, online worldwide or 1-on-1 in Italy. Squat, bench, deadlift — coached with direct, honest feedback.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23000'/%3E%3Cg stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round'%3E%3Cline x1='2' y1='12' x2='22' y2='12'/%3E%3Crect x='4' y='7' width='2.6' height='10'/%3E%3Crect x='17.4' y='7' width='2.6' height='10'/%3E%3Crect x='7' y='9' width='2' height='6'/%3E%3Crect x='15' y='9' width='2' height='6'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <script defer src="/_vercel/insights/script.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Ivan Vernieri — Powerlifting Coaching",
+  "description": "Powerlifting coaching by Ivan Vernieri. Online coaching worldwide and 1-on-1 in-person sessions in Italy.",
+  "telephone": "+39 345 637 8932",
+  "areaServed": ["Online worldwide", "IT"],
+  "priceRange": "Contact for pricing"
+}
+</script>
 <style>
-  :root {
-    --c-primary: #b31217;
-    --c-primary-dark: #7a0c10;
-    --c-accent: #e74c3c;
-    --c-bg: #fff5f5;
-    --c-bg-alt: #fbe1e1;
-    --c-text: #202126;
-    --c-text-light: #5a5c66;
-    --c-white: #ffffff;
-    --c-border: #e6e4df;
-    --radius: 14px;
-    --shadow: 0 10px 30px rgba(0,0,0,.08);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  :root{
+    --canvas:#000000;
+    --surface-soft:#0d0d0d;
+    --surface-card:#161616;
+    --surface-elevated:#242424;
+    --hairline:#2c2c2c;
+    --hairline-strong:#3c3c3c;
+    --on-dark:#ffffff;
+    --body:#b8b8b8;
+    --body-strong:#e9e9e9;
+    --muted:#7e7e7e;
+    --stripe-1:#8a9099;
+    --stripe-2:#ffffff;
+    --stripe-3:#e5231b;
+    --accent:#e5231b;
+    --whatsapp:#25D366;
+    --radius:0px;
+    --radius-full:9999px;
+    --container:1240px;
+    --section-y:96px;
+    --ease:cubic-bezier(.16,.8,.24,1);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   }
-  * { box-sizing: border-box; }
-  body { margin:0; color:var(--c-text); background:var(--c-bg); line-height:1.6; }
-  a { color:inherit; text-decoration:none; }
-  img { max-width:100%; display:block; }
-  .wrap { max-width:1140px; margin:0 auto; padding:0 24px; }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--canvas);color:var(--on-dark);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--container);margin:0 auto;padding:0 24px;}
+  ::selection{background:var(--stripe-3);color:#fff;}
 
-  header {
-    position: sticky; top:0; z-index:50;
-    background: var(--c-white);
-    border-bottom: 1px solid var(--c-border);
+  /* skip link */
+  .skip-link{position:absolute;left:-9999px;top:0;background:#fff;color:#000;padding:12px 20px;z-index:200;font-weight:700;text-transform:uppercase;letter-spacing:1px;font-size:13px;}
+  .skip-link:focus{left:16px;top:16px;}
+
+  :focus-visible{outline:2px solid var(--stripe-3);outline-offset:3px;}
+
+  /* type */
+  .eyebrow{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--body-strong);display:inline-flex;align-items:center;gap:10px;}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--stripe-3);box-shadow:0 0 0 0 rgba(229,35,27,.6);animation:pulseDot 2.2s var(--ease) infinite;flex:none;}
+  @keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(229,35,27,.55);}70%{box-shadow:0 0 0 9px rgba(229,35,27,0);}100%{box-shadow:0 0 0 0 rgba(229,35,27,0);}}
+  h1,h2,h3{margin:0;font-weight:800;text-transform:uppercase;letter-spacing:-.5px;line-height:1.05;}
+  h1{font-size:80px;}
+  h2{font-size:48px;line-height:1.08;}
+  h3{font-size:22px;letter-spacing:0;}
+  .lead{font-weight:300;color:var(--body-strong);font-size:19px;line-height:1.6;}
+  p{font-weight:300;color:var(--body);}
+  .section-tag{font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;display:block;}
+  .section-head{max-width:640px;margin:0 0 56px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+
+  /* stripe */
+  .stripe{height:4px;width:100%;background:linear-gradient(90deg,var(--stripe-1) 0 33.34%,var(--stripe-2) 33.34% 66.67%,var(--stripe-3) 66.67% 100%);}
+  .stripe.small{width:64px;height:4px;margin-bottom:22px;}
+
+  /* top load bar */
+  #loadbar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--stripe-1),var(--stripe-2),var(--stripe-3));z-index:999;animation:loadbar 1.4s var(--ease) forwards;}
+  @keyframes loadbar{0%{width:0;opacity:1;}70%{width:100%;opacity:1;}100%{width:100%;opacity:0;}}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:50px;padding:0 30px;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border-radius:var(--radius);border:1px solid #fff;background:transparent;color:#fff;cursor:pointer;position:relative;overflow:hidden;transition:color .35s var(--ease);white-space:nowrap;}
+  .btn span{position:relative;z-index:2;display:inline-flex;align-items:center;gap:10px;}
+  .btn::before{content:"";position:absolute;inset:0;background:#fff;transform:translateX(-101%);transition:transform .35s var(--ease);z-index:1;}
+  .btn:hover::before,.btn:focus-visible::before{transform:translateX(0);}
+  .btn:hover,.btn:focus-visible{color:#000;}
+  .btn-primary{background:#fff;color:#000;border-color:#fff;}
+  .btn-primary::before{background:#000;}
+  .btn-primary:hover,.btn-primary:focus-visible{color:#fff;}
+  .btn-sm{height:44px;padding:0 22px;font-size:12px;}
+  .btn-block{width:100%;}
+  .btn svg{width:16px;height:16px;flex:none;}
+
+  .text-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#fff;border-bottom:1px solid var(--hairline-strong);padding-bottom:4px;transition:border-color .25s var(--ease),gap .25s var(--ease),color .25s var(--ease);}
+  .text-link:hover{gap:12px;border-color:var(--stripe-3);color:var(--stripe-3);}
+  .text-link svg{width:14px;height:14px;transition:transform .25s var(--ease);}
+  .text-link:hover svg{transform:translateX(3px);}
+
+  /* icon buttons */
+  .icon-btn{width:48px;height:48px;border-radius:var(--radius-full);background:var(--surface-card);border:1px solid var(--hairline);display:inline-flex;align-items:center;justify-content:center;color:#fff;flex:none;}
+  .icon-btn svg{width:20px;height:20px;}
+
+  /* ===== NAV ===== */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;height:76px;display:flex;align-items:center;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:background .3s var(--ease),border-color .3s var(--ease),height .3s var(--ease);}
+  header.scrolled{height:64px;background:rgba(0,0,0,.88);border-bottom-color:var(--hairline);}
+  .navbar{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px;}
+  .brand .mark{width:38px;height:38px;border:1px solid #fff;display:flex;align-items:center;justify-content:center;flex:none;}
+  .brand .mark svg{width:20px;height:20px;}
+  .brand .name{display:flex;flex-direction:column;line-height:1.15;}
+  .brand .name b{font-size:15px;letter-spacing:1px;text-transform:uppercase;}
+  .brand .name span{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:600;}
+  nav.primary-nav{display:flex;align-items:center;gap:36px;}
+  nav.primary-nav a{font-size:13px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;color:var(--body);position:relative;padding:8px 0;transition:color .25s;}
+  nav.primary-nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--stripe-3);transition:width .25s var(--ease);}
+  nav.primary-nav a:hover,nav.primary-nav a.active{color:#fff;}
+  nav.primary-nav a:hover::after,nav.primary-nav a.active::after{width:100%;}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:1px solid var(--hairline-strong);cursor:pointer;flex:none;}
+  .hamburger span{width:18px;height:2px;background:#fff;margin:0 auto;transition:transform .3s var(--ease),opacity .3s var(--ease);}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+  .mobile-nav{position:fixed;inset:0;background:#000;z-index:99;display:flex;flex-direction:column;transform:translateY(-100%);transition:transform .4s var(--ease);}
+  .mobile-nav.open{transform:translateY(0);}
+  .mobile-nav .stripe{flex:none;}
+  .mobile-nav-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:40px 32px;gap:8px;}
+  .mobile-nav a{font-size:34px;font-weight:800;text-transform:uppercase;color:#fff;padding:14px 0;border-bottom:1px solid var(--hairline);opacity:0;transform:translateY(16px);transition:opacity .4s var(--ease),transform .4s var(--ease);}
+  .mobile-nav.open a{opacity:1;transform:translateY(0);}
+  .mobile-nav.open a:nth-child(1){transition-delay:.08s;}
+  .mobile-nav.open a:nth-child(2){transition-delay:.14s;}
+  .mobile-nav.open a:nth-child(3){transition-delay:.2s;}
+  .mobile-nav.open a:nth-child(4){transition-delay:.26s;}
+  .mobile-nav-foot{padding:28px 32px 40px;border-top:1px solid var(--hairline);}
+
+  /* ===== HERO ===== */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:150px 0 64px;overflow:hidden;}
+  .hero-glow{position:absolute;top:-20%;left:-10%;width:60%;height:80%;background:radial-gradient(circle,rgba(229,35,27,.18),transparent 65%);filter:blur(10px);animation:glowPulse 8s ease-in-out infinite;pointer-events:none;}
+  @keyframes glowPulse{0%,100%{opacity:.7;transform:scale(1);}50%{opacity:1;transform:scale(1.15);}}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;}
+  .hero-copy .eyebrow{margin-bottom:22px;}
+  .hero h1{margin:0 0 24px;}
+  .hero h1 .line{display:block;overflow:hidden;}
+  .hero h1 .line span{display:block;transform:translateY(110%);animation:lineUp .8s var(--ease) forwards;}
+  .hero h1 .line:nth-child(1) span{animation-delay:.15s;}
+  .hero h1 .line:nth-child(2) span{animation-delay:.3s;}
+  @keyframes lineUp{to{transform:translateY(0);}}
+  .hero .lead{max-width:46ch;margin:0 0 36px;opacity:0;animation:fadeUp .8s var(--ease) forwards .6s;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:16px;align-items:center;opacity:0;animation:fadeUp .8s var(--ease) forwards .75s;}
+  .hero-sub-link{margin-top:22px;opacity:0;animation:fadeUp .8s var(--ease) forwards .9s;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+  .hero-photo{position:relative;aspect-ratio:3/4;overflow:hidden;isolation:isolate;opacity:0;animation:fadeIn 1s var(--ease) forwards .3s;}
+  @keyframes fadeIn{to{opacity:1;}}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 20%;transform:scale(1.08);transition:transform 8s var(--ease);}
+  .hero.loaded .hero-photo img{transform:scale(1);}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.35) 30%,rgba(0,0,0,0) 55%),linear-gradient(0deg,rgba(0,0,0,.85),transparent 40%);}
+  .hero-photo-cap{position:absolute;left:20px;bottom:18px;z-index:2;}
+  .hero-photo-cap b{display:block;font-size:14px;font-weight:800;letter-spacing:1px;text-transform:uppercase;}
+  .hero-photo-cap span{font-size:12px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;}
+  .hero-photo-frame{position:absolute;inset:14px;border:1px solid rgba(255,255,255,.18);pointer-events:none;z-index:2;}
+
+  /* ticker */
+  .ticker{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);overflow:hidden;background:var(--surface-soft);position:relative;z-index:2;}
+  .ticker-track{display:flex;white-space:nowrap;width:max-content;animation:ticker 26s linear infinite;}
+  .ticker:hover .ticker-track{animation-play-state:paused;}
+  .ticker span{display:inline-flex;align-items:center;padding:16px 0;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+  .ticker span i{display:inline-block;width:6px;height:6px;background:var(--stripe-3);margin:0 24px;flex:none;font-style:normal;}
+  @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* ===== VALUE ROW ===== */
+  .value-row{padding:var(--section-y) 0;border-bottom:1px solid var(--hairline);}
+  .value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);}
+  .value-card{background:var(--surface-soft);padding:36px 28px;transition:background .3s var(--ease),transform .3s var(--ease);}
+  .value-card:hover{background:var(--surface-card);transform:translateY(-4px);}
+  .value-card svg{width:30px;height:30px;margin-bottom:22px;color:#fff;}
+  .value-card h3{font-size:15px;letter-spacing:1px;margin-bottom:10px;}
+  .value-card p{font-size:14px;margin:0;}
+
+  /* ===== SECTIONS generic ===== */
+  section{padding:var(--section-y) 0;}
+  .section-alt{background:var(--surface-soft);}
+
+  /* services */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .service-card{background:var(--surface-card);border:1px solid var(--hairline);padding:40px 32px;display:flex;flex-direction:column;transition:border-color .3s var(--ease),transform .3s var(--ease);}
+  .service-card:hover{border-color:var(--hairline-strong);transform:translateY(-6px);}
+  .service-num{font-size:13px;font-weight:700;letter-spacing:2px;color:var(--muted);margin-bottom:26px;}
+  .service-card h3{font-size:24px;margin-bottom:14px;}
+  .service-card p{flex:1;margin:0 0 26px;font-size:15px;}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center;}
+  .about-photo{position:relative;aspect-ratio:4/5;overflow:hidden;}
+  .about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 15%;filter:grayscale(.15);}
+  .about-photo-frame{position:absolute;inset:14px;border:1px solid rgba(255,255,255,.18);}
+  .about h2{margin-bottom:22px;}
+  .about p+p{margin-top:16px;}
+  .principles{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:0;border-top:1px solid var(--hairline);}
+  .principles li{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--hairline);}
+  .principles svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--stripe-3);}
+  .principles b{display:block;font-size:14px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px;}
+  .principles span{font-size:14px;color:var(--body);font-weight:300;}
+
+  /* process */
+  .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step;}
+  .step{border-top:2px solid var(--hairline-strong);padding-top:24px;position:relative;}
+  .step .num{font-size:44px;font-weight:800;color:var(--hairline-strong);line-height:1;margin-bottom:20px;transition:color .3s;}
+  .step:hover .num{color:var(--stripe-3);}
+  .step h3{font-size:16px;letter-spacing:.5px;margin-bottom:10px;}
+  .step p{font-size:14px;margin:0;}
+
+  /* progress graphic */
+  .progress-band{border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);background:radial-gradient(ellipse at 20% 50%,rgba(255,255,255,.03),transparent 60%);}
+  .progress-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center;}
+  .progress-copy h2{margin-bottom:18px;}
+  .progress-svg{width:100%;height:auto;overflow:visible;}
+  .progress-svg .axis{stroke:var(--hairline-strong);stroke-width:1;}
+  .progress-svg .line{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;pathLength:1;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s var(--ease);}
+  .progress-svg.in-view .line{stroke-dashoffset:0;}
+  .progress-svg .accent-line{stroke:var(--stripe-3);}
+  .progress-svg .dot{fill:#fff;opacity:0;transition:opacity .4s var(--ease) 1.6s;}
+  .progress-svg.in-view .dot{opacity:1;}
+  .progress-label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;fill:var(--muted);font-family:'Inter',sans-serif;}
+
+  /* CTA band */
+  .cta-band{position:relative;padding:120px 0;text-align:center;overflow:hidden;background:var(--surface-soft);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);}
+  .cta-ghost{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:min(22vw,260px);font-weight:800;letter-spacing:-4px;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.06);white-space:nowrap;pointer-events:none;user-select:none;}
+  .cta-band .inner{position:relative;z-index:2;}
+  .cta-band h2{max-width:16ch;margin:0 auto 20px;}
+  .cta-band .lead{max-width:50ch;margin:0 auto 40px;}
+  .cta-band-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start;}
+  .contact-list{list-style:none;margin:32px 0 36px;padding:0;}
+  .contact-list li{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--hairline);align-items:center;}
+  .contact-list li .icon-btn{background:transparent;}
+  .contact-list b{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+  .contact-list a,.contact-list span.val{font-size:17px;font-weight:500;}
+  .contact-list a:hover{color:var(--stripe-3);}
+
+  .form-card{background:var(--surface-card);border:1px solid var(--hairline);padding:40px;}
+  .field{margin-bottom:22px;}
+  .field label{display:block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+  .field input,.field select,.field textarea{width:100%;background:var(--surface-soft);border:1px solid var(--hairline-strong);color:#fff;padding:14px 16px;font-family:inherit;font-size:15px;font-weight:400;border-radius:var(--radius);transition:border-color .25s;}
+  .field textarea{resize:vertical;min-height:110px;}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:#fff;outline:none;}
+  .field-note{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.6;}
+  .form-msg{margin-top:16px;font-size:13px;font-weight:600;display:none;}
+  .form-msg.show{display:block;}
+
+  /* footer */
+  footer{padding:64px 0 32px;border-top:1px solid var(--hairline);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+  .footer-brand p{font-size:14px;max-width:34ch;margin-top:16px;}
+  .footer-col b{display:block;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:18px;}
+  .footer-col a{display:block;font-size:14px;color:var(--body);padding:6px 0;}
+  .footer-col a:hover{color:#fff;}
+  .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:28px;border-top:1px solid var(--hairline);font-size:12px;color:var(--muted);}
+
+  /* whatsapp float */
+  .wa-float{position:fixed;right:24px;bottom:24px;z-index:90;width:60px;height:60px;border-radius:50%;background:var(--whatsapp);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.4);}
+  .wa-float svg{width:30px;height:30px;fill:#fff;}
+  .wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--whatsapp);animation:waPulse 2.4s ease-out infinite;z-index:-1;}
+  @keyframes waPulse{0%{transform:scale(1);opacity:.6;}100%{transform:scale(1.9);opacity:0;}}
+
+  /* reveal */
+  html.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+  html.js .reveal.is-visible{opacity:1;transform:translateY(0);}
+  .reveal-1{transition-delay:.05s;}
+  .reveal-2{transition-delay:.15s;}
+  .reveal-3{transition-delay:.25s;}
+  .reveal-4{transition-delay:.35s;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
+    html.js .reveal{opacity:1;transform:none;}
+    .hero h1 .line span{transform:none;}
   }
-  .headbar { display:flex; align-items:center; justify-content:space-between; padding:14px 24px; max-width:1140px; margin:0 auto; }
-  .logo { display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.15rem; color:var(--c-primary-dark); }
-  .logo-badge { width:38px; height:38px; border-radius:10px; background:var(--c-primary); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:1.1rem; }
-  .head-cta { background:var(--c-primary); color:#fff; padding:10px 18px; border-radius:999px; font-weight:700; font-size:.92rem; white-space:nowrap; }
-  .head-cta:hover { background:var(--c-primary-dark); }
 
-  .hero { background: linear-gradient(155deg, var(--c-bg-alt), var(--c-bg) 60%); padding:64px 0 56px; }
-  .hero-grid { display:grid; grid-template-columns: 1.3fr 1fr; gap:40px; align-items:center; }
-  .badge { display:inline-block; background:var(--c-accent); color:#fff; font-size:.78rem; font-weight:700; padding:6px 14px; border-radius:999px; letter-spacing:.03em; margin-bottom:18px; }
-  .hero h1 { font-size:2.5rem; line-height:1.15; margin:0 0 18px; color:var(--c-primary-dark); }
-  .hero p.lead { font-size:1.1rem; color:var(--c-text-light); margin:0 0 28px; max-width:52ch; }
-  .cta-row { display:flex; flex-wrap:wrap; gap:14px; margin-bottom:10px; }
-  .btn { padding:14px 24px; border-radius:10px; font-weight:700; font-size:.98rem; display:inline-flex; align-items:center; gap:8px; }
-  .btn-primary { background:var(--c-primary); color:#fff; box-shadow: var(--shadow); }
-  .btn-primary:hover { background:var(--c-primary-dark); }
-  .btn-outline { background:#fff; color:var(--c-primary-dark); border:2px solid var(--c-primary); }
-  .btn-outline:hover { background:var(--c-bg-alt); }
-  .stat-card { background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:28px; border:1px solid var(--c-border); }
-  .stat-card h3 { margin:0 0 14px; font-size:1.05rem; color:var(--c-primary-dark); }
-  .stat-row { display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px dashed var(--c-border); font-size:.92rem; }
-  .stat-row:last-child { border-bottom:none; }
-  .stat-num { font-weight:800; color:var(--c-primary); }
-
-  section { padding:60px 0; }
-  .section-alt { background: var(--c-bg-alt); }
-  h2 { font-size:1.9rem; color:var(--c-primary-dark); margin:0 0 12px; text-align:center; }
-  .section-intro { text-align:center; color:var(--c-text-light); max-width:62ch; margin:0 auto 40px; }
-
-  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-  .card { background:#fff; border:1px solid var(--c-border); border-radius:var(--radius); padding:26px; box-shadow: 0 4px 14px rgba(0,0,0,.04); }
-  .card .icon { width:46px; height:46px; border-radius:10px; background:var(--c-bg-alt); color:var(--c-primary); display:flex; align-items:center; justify-content:center; font-size:1.4rem; margin-bottom:14px; }
-  .card h3 { margin:0 0 8px; font-size:1.1rem; color:var(--c-text); }
-  .card p { margin:0; color:var(--c-text-light); font-size:.95rem; }
-
-  .gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-  .gallery .ph { aspect-ratio:4/3; border-radius:var(--radius); background:var(--c-bg-alt); border:2px dashed var(--c-border); display:flex; align-items:center; justify-content:center; color:var(--c-primary); font-size:2rem; flex-direction:column; gap:6px; text-align:center; padding:10px; }
-  .gallery .ph span { font-size:.78rem; color:var(--c-text-light); font-weight:600; }
-  .gallery figure { margin:0; border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); position:relative; background:#000; }
-  .gallery figure img { aspect-ratio:4/3; width:100%; height:100%; object-fit:cover; }
-  .gallery figcaption { position:absolute; left:0; right:0; bottom:0; padding:10px 14px; background:linear-gradient(0deg, rgba(0,0,0,.65), rgba(0,0,0,0)); color:#fff; font-size:.85rem; font-weight:600; }
-
-  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; counter-reset:step; }
-  .step { background:#fff; border-radius:var(--radius); padding:26px 22px; border:1px solid var(--c-border); position:relative; }
-  .step .num { width:36px; height:36px; border-radius:50%; background:var(--c-primary); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; margin-bottom:14px; }
-  .step h3 { margin:0 0 8px; font-size:1.02rem; }
-  .step p { margin:0; font-size:.9rem; color:var(--c-text-light); }
-
-  .about { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
-  .about-photo { aspect-ratio:1/1; background:var(--c-bg-alt); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; color:var(--c-primary); font-size:3rem; overflow:hidden; box-shadow:var(--shadow); }
-  .about-photo img { width:100%; height:100%; object-fit:cover; display:block; }
-  .about h2 { text-align:left; }
-  .about p { color:var(--c-text-light); }
-  .seo-text { color:var(--c-text-light); font-size:.96rem; }
-  .seo-text h3 { color:var(--c-primary-dark); font-size:1.15rem; margin-top:28px; }
-
-  .refs { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-  .ref-card { background:#fff; border-radius:var(--radius); border:1px solid var(--c-border); padding:26px; }
-  .ref-card .stars { color:#f5a623; margin-bottom:10px; font-size:1rem; }
-  .ref-card p { color:var(--c-text-light); font-style:italic; margin:0 0 14px; font-size:.95rem; }
-  .ref-card .who { font-weight:700; font-size:.9rem; color:var(--c-text); }
-  .ref-note { text-align:center; color:var(--c-text-light); font-size:.82rem; margin-top:18px; }
-
-  .cta-section { background: linear-gradient(135deg, var(--c-primary), var(--c-primary-dark)); color:#fff; text-align:center; }
-  .cta-section h2 { color:#fff; }
-  .cta-section p { color:rgba(255,255,255,.9); max-width:56ch; margin:0 auto 30px; }
-  .cta-section .cta-row { justify-content:center; }
-  .cta-section .btn-outline { background:transparent; color:#fff; border-color:#fff; }
-  .cta-section .btn-outline:hover { background:rgba(255,255,255,.15); }
-  .cta-section .btn-primary { background:#fff; color:var(--c-primary-dark); }
-  .cta-section .btn-primary:hover { background:#f2f2f2; }
-
-  .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
-  .contact-list { list-style:none; padding:0; margin:0 0 26px; }
-  .contact-list li { display:flex; gap:12px; padding:12px 0; border-bottom:1px solid var(--c-border); font-size:.98rem; }
-  .contact-list li b { color:var(--c-primary-dark); min-width:110px; display:inline-block; }
-  .map-ph { background:var(--c-bg-alt); border:2px dashed var(--c-border); border-radius:var(--radius); height:100%; min-height:220px; display:flex; align-items:center; justify-content:center; color:var(--c-primary); font-size:2.4rem; }
-
-  footer { background:#20222a; color:#c9cad2; padding:36px 0; font-size:.88rem; }
-  footer .wrap { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
-  footer a { color:#fff; }
-
-  @media (max-width: 860px) {
-    .hero-grid, .about, .contact-grid { grid-template-columns:1fr; }
-    .cards { grid-template-columns:repeat(2,1fr); }
-    .gallery { grid-template-columns:repeat(2,1fr); }
-    .steps { grid-template-columns:repeat(2,1fr); }
-    .refs { grid-template-columns:1fr; }
-    .hero h1 { font-size:1.9rem; }
-    .headbar { flex-wrap:wrap; gap:10px; }
+  @media (max-width:1100px){
+    nav.primary-nav{display:none;}
+    .nav-cta .btn{display:none;}
+    .hamburger{display:flex;}
+    .about-grid{grid-template-columns:1fr;gap:40px;}
+    .about-photo{max-width:420px;}
+    .progress-grid{grid-template-columns:1fr;gap:40px;}
   }
-  @media (max-width: 480px) {
-    .cards, .gallery, .steps { grid-template-columns:1fr; }
+  @media (max-width:1024px){
+    .value-grid{grid-template-columns:repeat(2,1fr);}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .steps-grid{grid-template-columns:repeat(2,1fr);gap:32px;}
+    .contact-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:860px){
+    h1{font-size:48px;}
+    h2{font-size:32px;}
+    .hero{padding:130px 0 0;min-height:auto;}
+    .hero-grid{grid-template-columns:1fr;gap:32px;}
+    .hero-photo{aspect-ratio:16/10;margin:0 -24px;width:calc(100% + 48px);max-width:none;}
+    .cta-band{padding:80px 0;}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 20px;}
+    :root{--section-y:64px;}
+    .value-grid{grid-template-columns:1fr;}
+    .services-grid{grid-template-columns:1fr;}
+    .steps-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:32px;}
+    .hero-ctas{flex-direction:column;align-items:stretch;}
+    .hero-ctas .btn{width:100%;}
+    .cta-band-ctas{flex-direction:column;align-items:stretch;}
+    .cta-band-ctas .btn{width:100%;}
+    .wa-float{right:16px;bottom:16px;width:54px;height:54px;}
+    .form-card{padding:26px;}
   }
 </style>
 </head>
 <body>
+<div id="loadbar"></div>
+<a href="#main" class="skip-link">Skip to content</a>
 
-<header>
-  <div class="headbar">
-    <div class="logo"><span class="logo-badge">A</span> Autolakovna Kubát</div>
-    <a href="tel:+420724126257" class="head-cta">📞 724 126 257</a>
+<header id="siteHeader">
+  <div class="wrap navbar">
+    <a href="#top" class="brand">
+      <span class="mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><line x1="2" y1="12" x2="22" y2="12"/><rect x="4" y="7" width="2.6" height="10"/><rect x="17.4" y="7" width="2.6" height="10"/><rect x="7" y="9" width="2" height="6"/><rect x="15" y="9" width="2" height="6"/></svg>
+      </span>
+      <span class="name"><b>Ivan Vernieri</b><span>Powerlifting Coaching</span></span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#coaching">Coaching</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-sm" href="tel:+393456378932"><span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.6 2z"/></svg>
+        +39 345 637 8932</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="badge">Autolakovna a karosářství</span>
-      <h1>Rychle, kvalitně a bez starostí</h1>
-      <p class="lead">Provádíme lakování automobilů, opravy karoserie a přípravu vozu před lakováním. Specializujeme se také na renovace historických vozidel a veteránů a řešíme pojistné události všech pojišťoven. Léta zkušeností v oboru autolakýrnictví v Kyselce u Karlových Varů.</p>
-      <div class="cta-row">
-        <a href="#kontakt" class="btn btn-primary">Nezávazná poptávka</a>
-        <a href="tel:+420724126257" class="btn btn-outline">Zavolejte nám</a>
-        <a href="mailto:autolakykubat@volny.cz" class="btn btn-outline">Napsat e-mail</a>
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+  <div class="stripe"></div>
+  <div class="mobile-nav-body">
+    <a href="#coaching">Coaching</a>
+    <a href="#process">Process</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="mobile-nav-foot">
+    <a class="btn btn-primary btn-block" href="tel:+393456378932"><span>Call +39 345 637 8932</span></a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-glow"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="dot"></span> Powerlifting Coach · Italy</span>
+        <h1>
+          <span class="line"><span>Coaching Built</span></span>
+          <span class="line"><span>For The Platform.</span></span>
+        </h1>
+        <p class="lead">Ivan Vernieri coaches lifters online and in person — individualized programming for squat, bench press and deadlift, built around your schedule, your equipment and your goals.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary"><span>Start Online Coaching</span></a>
+          <a href="tel:+393456378932" class="btn"><span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.6 2z"/></svg>
+            +39 345 637 8932</span></a>
+        </div>
+        <a class="text-link hero-sub-link" href="https://wa.me/393456378932?text=Hi%20Ivan%2C%20I%27d%20like%20to%20ask%20about%20coaching" target="_blank" rel="noopener">
+          Or message on WhatsApp
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="hero-photo">
+        <img src="img/ivan-vernieri-hero.jpg" alt="Ivan Vernieri, powerlifting coach" width="1169" height="1152" fetchpriority="high">
+        <div class="hero-photo-frame"></div>
+        <div class="hero-photo-cap">
+          <b>Ivan Vernieri</b>
+          <span>Powerlifting Coach</span>
+        </div>
       </div>
     </div>
-    <div class="stat-card">
-      <h3>Autolakovna Milan Kubát</h3>
-      <div class="stat-row"><span>Obor</span><span class="stat-num">autolakýrnictví</span></div>
-      <div class="stat-row"><span>Region</span><span class="stat-num">Karlovy Vary a okolí</span></div>
-      <div class="stat-row"><span>Přístup</span><span class="stat-num">osobní jednání</span></div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Squat<i></i>Bench<i></i>Deadlift<i></i>Online Coaching<i></i>1‑on‑1 Coaching<i></i>Meet Prep<i></i>Squat<i></i>Bench<i></i>Deadlift<i></i>Online Coaching<i></i>1‑on‑1 Coaching<i></i>Meet Prep<i></i></span>
+      <span>Squat<i></i>Bench<i></i>Deadlift<i></i>Online Coaching<i></i>1‑on‑1 Coaching<i></i>Meet Prep<i></i>Squat<i></i>Bench<i></i>Deadlift<i></i>Online Coaching<i></i>1‑on‑1 Coaching<i></i>Meet Prep<i></i></span>
     </div>
   </div>
-</section>
 
-<section id="sluzby">
-  <div class="wrap">
-    <h2>Naše služby</h2>
-    <p class="section-intro">Lakýrnické a karosářské služby pro osobní i užitková vozidla.</p>
-    <div class="cards">
-      <div class="card"><div class="icon">🎨</div><h3>Lakování karoserie</h3><p>Kompletní i dílčí lakování vozidel v barvě dle výrobce.</p></div>
-      <div class="card"><div class="icon">🔨</div><h3>Karosářské opravy</h3><p>Opravy pomačkaných a poškozených částí karoserie.</p></div>
-      <div class="card"><div class="icon">🛠️</div><h3>Příprava před lakováním</h3><p>Broušení, tmelení a příprava povrchu pro dokonalý výsledek.</p></div>
-      <div class="card"><div class="icon">🚗</div><h3>Oprava po nehodě</h3><p>Kompletní opravy karoserie po dopravní nehodě.</p></div>
-      <div class="card"><div class="icon">🛡️</div><h3>Pojistné události</h3><p>Vyřídíme pojistnou událost s libovolnou pojišťovnou – od nahlášení škody až po opravu vozidla.</p></div>
-      <div class="card"><div class="icon">✨</div><h3>Renovace laku</h3><p>Leštění a obnova původního laku vozidla.</p></div>
-      <div class="card"><div class="icon">🏆</div><h3>Renovace veteránů</h3><p>Kompletní renovace historických vozidel a veteránů – karoserie i lak do původního nebo požadovaného odstínu.</p></div>
-      <div class="card"><div class="icon">🧰</div><h3>Drobné opravy</h3><p>Opravy odřenin, škrábanců a menších poškození.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section-alt" id="fotogalerie">
-  <div class="wrap">
-    <h2>Fotogalerie</h2>
-    <p class="section-intro">Ukázky z naší dílny – lakování a renovace historických vozidel a veteránů.</p>
-    <div class="gallery">
-      <figure><img src="img/veteran-02.jpg" alt="Renovace veterána – čerstvě lakovaná karoserie v lakovně"><figcaption>Čerstvě nalakovaná karoserie</figcaption></figure>
-      <figure><img src="img/veteran-01.jpg" alt="Renovace historického vozidla v lakovně"><figcaption>Renovace v lakovně</figcaption></figure>
-      <figure><img src="img/veteran-06.jpg" alt="Renovovaný veterán Tatra po dokončení"><figcaption>Hotová renovace veterána</figcaption></figure>
-      <figure><img src="img/veteran-04.jpg" alt="Karosářské práce na historickém vozidle"><figcaption>Karosářské práce</figcaption></figure>
-      <figure><img src="img/veteran-03.jpg" alt="Dokončený veterán po renovaci"><figcaption>Po dokončení renovace</figcaption></figure>
-      <figure><img src="img/veteran-05.jpg" alt="Předání hotového vozu zákazníkovi"><figcaption>Předání hotového vozu</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="postup">
-  <div class="wrap">
-    <h2>Jak probíhá spolupráce</h2>
-    <p class="section-intro">Od prvního kontaktu až po předání hotové zakázky – jasně a bez komplikací.</p>
-    <div class="steps">
-      <div class="step"><div class="num">1</div><h3>Pošlete poptávku</h3><p>Napište nebo zavolejte – stačí pár slov o tom, co potřebujete.</p></div>
-      <div class="step"><div class="num">2</div><h3>Připravíme nabídku</h3><p>Prohlédneme vůz, navrhneme postup opravy a upřesníme cenu.</p></div>
-      <div class="step"><div class="num">3</div><h3>Opravíme a nalakujeme</h3><p>Karoserii opravíme, připravíme a nalakujeme v odstínu dle výrobce vozidla.</p></div>
-      <div class="step"><div class="num">4</div><h3>Dodáme</h3><p>Hotové vozidlo zkontrolujeme a předáme zákazníkovi.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section-alt" id="o-nas">
-  <div class="wrap about">
-    <div class="about-photo"><img src="img/veteran-05.jpg" alt="Milan Kubát u opraveného vozidla"></div>
-    <div>
-      <h2>O naší firmě</h2>
-      <p>Autolakovna Milan Kubát působí v Kyselce u Karlových Varů a věnuje se lakování a karosářským opravám vozidel. Klademe důraz na kvalitní zpracování a osobní přístup ke každé zakázce.</p>
-      <p>Kromě běžných oprav a lakování se dlouhodobě věnujeme i renovacím historických vozidel a veteránů – od karosářských prací přes přípravu povrchu až po nástřik v původním nebo požadovaném odstínu.</p>
-      <div class="seo-text">
-        <h3>Autolakovna Karlovy Vary a okolí</h3>
-        <p>Nabízíme lakýrnické a karosářské služby pro zákazníky z Kyselky, Karlových Varů a okolí – od drobných retuší po kompletní opravu karoserie po nehodě i renovaci historických vozidel a veteránů.</p>
+  <!-- VALUE ROW -->
+  <div class="value-row">
+    <div class="wrap">
+      <div class="value-grid">
+        <div class="value-card reveal reveal-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          <h3>Online, Worldwide</h3>
+          <p>Train from anywhere with weekly programming and video check-ins.</p>
+        </div>
+        <div class="value-card reveal reveal-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12h5l2 5 4-14 2 9h7"/></svg>
+          <h3>1‑on‑1, In Person</h3>
+          <p>Hands-on sessions with real-time cueing and technique correction.</p>
+        </div>
+        <div class="value-card reveal reveal-3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <h3>Direct Coach Access</h3>
+          <p>Message-based support between sessions — not a generic app.</p>
+        </div>
+        <div class="value-card reveal reveal-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V9M12 19V5M20 19v-7"/></svg>
+          <h3>Built Around You</h3>
+          <p>Programs shaped by your schedule, equipment and competition calendar.</p>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-<section id="reference">
-  <div class="wrap">
-    <h2>Reference</h2>
-    <p class="section-intro">Ukázkové reference ilustrující typ spolupráce – po realizaci prvních zakázek je nahradíme reálnými hodnoceními zákazníků.</p>
-    <div class="refs">
-      <div class="ref-card"><div class="stars">★★★★★</div><p>„Auto po nehodě vypadá jako nové, barva sedí dokonale."</p><div class="who">Zákazník, Karlovy Vary</div></div>
-      <div class="ref-card"><div class="stars">★★★★★</div><p>„Rychlé vyřízení a solidní cena."</p><div class="who">Majitel firemního vozu, Kyselka</div></div>
-    </div>
-    <p class="ref-note">* Ukázkové reference, nikoli citace konkrétních osob.</p>
-  </div>
-</section>
-
-<section class="cta-section">
-  <div class="wrap">
-    <h2>Máte vozidlo k opravě nebo renovaci?</h2>
-    <p>Ať už jde o opravu po nehodě, kompletní lakování nebo renovaci veterána, rádi si vaše vozidlo prohlédneme a připravíme nabídku na míru.</p>
-    <div class="cta-row">
-      <a href="#kontakt" class="btn btn-primary">Nezávazná poptávka</a>
-      <a href="tel:+420724126257" class="btn btn-outline">Zavolejte nám</a>
-    </div>
-  </div>
-</section>
-
-<section id="kontakt">
-  <div class="wrap contact-grid">
-    <div>
-      <h2 style="text-align:left">Kontakt</h2>
-      <ul class="contact-list">
-        <li><b>Firma</b> Autolakovna Milan Kubát</li>
-        <li><b>Adresa</b> Radošov 197, 362 72 Kyselka, okres Karlovy Vary</li>
-        <li><b>Telefon</b> <a href="tel:+420724126257">724 126 257</a></li>
-        <li><b>E-mail</b> <a href="mailto:autolakykubat@volny.cz">autolakykubat@volny.cz</a></li>
-      </ul>
-      <div class="cta-row">
-        <a href="tel:+420724126257" class="btn btn-primary">Zavolejte nám</a>
-        <a href="mailto:autolakykubat@volny.cz" class="btn btn-outline">Napsat e-mail</a>
+  <!-- SERVICES -->
+  <section id="coaching">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-tag">Coaching</span>
+        <h2>Two Ways To Train With Ivan.</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal reveal-1">
+          <span class="service-num">01 — Online</span>
+          <h3>Online Coaching</h3>
+          <p>Remote programming built around your training history, equipment and schedule. Weekly check-ins, video form review, and adjustments as you progress — wherever you train.</p>
+          <a class="text-link" href="#contact">Ask about this
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="service-card reveal reveal-2">
+          <span class="service-num">02 — In Person</span>
+          <h3>1‑on‑1 Coaching</h3>
+          <p>Hands-on sessions in person. Real-time cueing, setup and bar-path correction, and direct feedback on every rep — for lifters training with Ivan in Italy.</p>
+          <a class="text-link" href="#contact">Ask about this
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="service-card reveal reveal-3">
+          <span class="service-num">03 — Competition</span>
+          <h3>Meet Prep</h3>
+          <p>Peaking cycles, attempt selection and meet-day strategy for lifters preparing to step on the platform, from first meet to next total.</p>
+          <a class="text-link" href="#contact">Ask about this
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="map-ph" style="padding:0; overflow:hidden;">
-      <iframe src="https://www.google.com/maps?q=Rado%C5%A1ov+197%2C+362+72+Kyselka&output=embed" width="100%" height="100%" style="border:0; min-height:220px; border-radius:inherit;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section-alt">
+    <div class="wrap about-grid">
+      <div class="about-photo reveal">
+        <img src="img/ivan-vernieri-about.webp" alt="Ivan Vernieri, powerlifting coach, portrait" width="594" height="1284" loading="lazy">
+        <div class="about-photo-frame"></div>
+      </div>
+      <div class="about reveal reveal-2">
+        <div class="stripe small"></div>
+        <span class="section-tag">About Your Coach</span>
+        <h2>Ivan Vernieri</h2>
+        <p>Ivan Vernieri is a powerlifting coach based in Italy, working with lifters both online and in person. His approach centers on solid technique, individualized programming and consistent, direct communication.</p>
+        <p>Whether you're chasing your first competition total or your next PR on the platform, the plan is built around you — not a template pulled off a shelf.</p>
+        <ul class="principles">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            <div><b>Technique First</b><span>Every program is built on a foundation of solid, repeatable technique.</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            <div><b>Programming That Adapts</b><span>Plans adjust to your recovery, feedback and progress — not the other way around.</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+            <div><b>Real Communication</b><span>Direct access to your coach — a conversation, not a chatbot or a generic app.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head center reveal">
+        <span class="section-tag">How It Works</span>
+        <h2>From First Call To First PR.</h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step reveal reveal-1">
+          <div class="num">01</div>
+          <h3>Consultation Call</h3>
+          <p>Tell Ivan about your training history, goals, schedule and equipment access.</p>
+        </div>
+        <div class="step reveal reveal-2">
+          <div class="num">02</div>
+          <h3>Assessment</h3>
+          <p>Review your current lifts and technique — by video for online athletes, or in person.</p>
+        </div>
+        <div class="step reveal reveal-3">
+          <div class="num">03</div>
+          <h3>Custom Program</h3>
+          <p>A programming plan built specifically around you — not a generic template.</p>
+        </div>
+        <div class="step reveal reveal-4">
+          <div class="num">04</div>
+          <h3>Ongoing Coaching</h3>
+          <p>Weekly check-ins, form feedback and adjustments as you progress cycle to cycle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRESS GRAPHIC -->
+  <div class="progress-band">
+    <div class="wrap" style="padding:var(--section-y) 0;">
+      <div class="progress-grid">
+        <div class="progress-copy reveal">
+          <span class="section-tag">Progressive Overload</span>
+          <h2>Strength Is Built One Cycle At A Time.</h2>
+          <p class="lead">No shortcuts, no guesswork — just structured programming, tracked progress and honest feedback, cycle after cycle.</p>
+        </div>
+        <div class="reveal reveal-2">
+          <svg class="progress-svg" id="progressSvg" viewBox="0 0 560 240" preserveAspectRatio="xMidYMid meet">
+            <line class="axis" x1="30" y1="200" x2="540" y2="200"/>
+            <line class="axis" x1="30" y1="20" x2="30" y2="200"/>
+            <text class="progress-label" x="30" y="222">Cycle 1</text>
+            <text class="progress-label" x="480" y="222">Cycle N</text>
+            <text class="progress-label" x="8" y="195" transform="rotate(-90 8 195)">Total</text>
+            <path class="line" d="M30,190 C 120,185 150,150 210,140 C 270,130 300,90 360,80 C 420,70 450,45 530,30"/>
+            <path class="line accent-line" d="M30,190 C 120,185 150,150 210,140 C 270,130 300,90 360,80 C 420,70 450,45 530,30" stroke-dasharray="1" style="stroke-dashoffset:1;opacity:.0;"/>
+            <circle class="dot" cx="530" cy="30" r="6"/>
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
-</section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="cta-ghost" aria-hidden="true">VERNIERI</div>
+    <div class="wrap inner reveal">
+      <span class="eyebrow" style="margin-bottom:20px;"><span class="dot"></span> Coaching Slots — Online &amp; In Person</span>
+      <h2>Ready To Get Stronger?</h2>
+      <p class="lead">Tell Ivan about your goals and current training — get a coaching plan built around you, online or in person.</p>
+      <div class="cta-band-ctas">
+        <a href="#contact" class="btn btn-primary"><span>Start Coaching</span></a>
+        <a href="https://wa.me/393456378932?text=Hi%20Ivan%2C%20I%27d%20like%20to%20ask%20about%20coaching" target="_blank" rel="noopener" class="btn"><span>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10 9 9.4 7.6 9.2 7c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.5-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.5-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+          WhatsApp Ivan</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <span class="section-tag">Contact</span>
+        <h2>Let's Build Your Program.</h2>
+        <p class="lead">Coaching online worldwide, and 1‑on‑1 in person in Italy. Reach out directly — no forms disappearing into a void.</p>
+        <ul class="contact-list">
+          <li>
+            <span class="icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2.1-.4c1 .4 2 .6 3 .7a2 2 0 0 1 1.6 2z"/></svg></span>
+            <div><b>Phone</b><a href="tel:+393456378932">+39 345 637 8932</a></div>
+          </li>
+          <li>
+            <span class="icon-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10 9 9.4 7.6 9.2 7c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.5-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.5-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></span>
+            <div><b>WhatsApp</b><a href="https://wa.me/393456378932?text=Hi%20Ivan%2C%20I%27d%20like%20to%20ask%20about%20coaching" target="_blank" rel="noopener">+39 345 637 8932</a></div>
+          </li>
+          <li>
+            <span class="icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><b>Based In</b><span class="val">Italy · Coaching online worldwide</span></div>
+          </li>
+        </ul>
+        <div class="hero-ctas">
+          <a href="tel:+393456378932" class="btn btn-primary"><span>Call Now</span></a>
+          <a href="https://wa.me/393456378932?text=Hi%20Ivan%2C%20I%27d%20like%20to%20ask%20about%20coaching" target="_blank" rel="noopener" class="btn"><span>WhatsApp</span></a>
+        </div>
+      </div>
+
+      <div class="form-card reveal reveal-2">
+        <h3 style="margin-bottom:26px;">Send Ivan A Message</h3>
+        <form id="coachForm">
+          <div class="field">
+            <label for="f-name">Your Name</label>
+            <input id="f-name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-level">Experience Level</label>
+            <select id="f-level" name="level">
+              <option>New to powerlifting</option>
+              <option>Training a while, new to competing</option>
+              <option>Competed before</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-mode">Preferred Coaching</label>
+            <select id="f-mode" name="mode">
+              <option>Online Coaching</option>
+              <option>1‑on‑1 In Person</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">What Do You Want To Achieve?</label>
+            <textarea id="f-msg" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block"><span>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10 9 9.4 7.6 9.2 7c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.5-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.5-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+            Send via WhatsApp</span></button>
+          <p class="field-note">This opens a pre-filled WhatsApp message directly to Ivan at +39 345 637 8932. Nothing is stored on this site.</p>
+          <p class="form-msg" id="formMsg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
   <div class="wrap">
-    <div>&copy; 2026 Autolakovna Milan Kubát</div>
-    <div>Radošov 197, Kyselka | <a href="tel:+420724126257">724 126 257</a></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><line x1="2" y1="12" x2="22" y2="12"/><rect x="4" y="7" width="2.6" height="10"/><rect x="17.4" y="7" width="2.6" height="10"/><rect x="7" y="9" width="2" height="6"/><rect x="15" y="9" width="2" height="6"/></svg></span>
+          <span class="name"><b>Ivan Vernieri</b><span>Powerlifting Coaching</span></span>
+        </div>
+        <p>Online coaching worldwide and 1‑on‑1 in-person coaching in Italy. Squat, bench, deadlift — programmed around you.</p>
+      </div>
+      <div class="footer-col">
+        <b>Site</b>
+        <a href="#coaching">Coaching</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <b>Contact</b>
+        <a href="tel:+393456378932">+39 345 637 8932</a>
+        <a href="https://wa.me/393456378932" target="_blank" rel="noopener">WhatsApp</a>
+        <span style="display:block;padding:6px 0;color:var(--body);font-size:14px;">Italy · Online worldwide</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Ivan Vernieri Powerlifting Coaching. Independent coaching services.</span>
+      <span>+39 345 637 8932</span>
+    </div>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/393456378932?text=Hi%20Ivan%2C%20I%27d%20like%20to%20ask%20about%20coaching" target="_blank" rel="noopener" aria-label="Message on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5C10 9 9.4 7.6 9.2 7c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.5-.3z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.5-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+</a>
+
+<script>
+  document.documentElement.classList.add('js');
+
+  // header scroll state
+  var header = document.getElementById('siteHeader');
+  var onScroll = function(){
+    if (window.scrollY > 30) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // hero photo settle animation
+  window.addEventListener('load', function(){
+    document.querySelector('.hero').classList.add('loaded');
+  });
+
+  // mobile nav
+  var hamburger = document.getElementById('hamburger');
+  var mobileNav = document.getElementById('mobileNav');
+  function closeMobileNav(){
+    mobileNav.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', function(){
+    var isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', closeMobileNav);
+  });
+
+  // scroll reveal
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+    var svgEl = document.getElementById('progressSvg');
+    if (svgEl){
+      var svgIo = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting){
+            svgEl.classList.add('in-view');
+            svgIo.unobserve(svgEl);
+          }
+        });
+      }, {threshold:0.4});
+      svgIo.observe(svgEl);
+    }
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); });
+    if (document.getElementById('progressSvg')) document.getElementById('progressSvg').classList.add('in-view');
+  }
+
+  // active nav link on scroll
+  var sections = ['coaching','process','about','contact'].map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  var navLinks = document.querySelectorAll('nav.primary-nav a');
+  if ('IntersectionObserver' in window && sections.length){
+    var navIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var id = entry.target.id;
+        var link = document.querySelector('nav.primary-nav a[href="#'+id+'"]');
+        if (!link) return;
+        if (entry.isIntersecting){
+          navLinks.forEach(function(l){ l.classList.remove('active'); });
+          link.classList.add('active');
+        }
+      });
+    }, {rootMargin:'-40% 0px -50% 0px'});
+    sections.forEach(function(s){ navIo.observe(s); });
+  }
+
+  // contact form -> WhatsApp handoff
+  var form = document.getElementById('coachForm');
+  var formMsg = document.getElementById('formMsg');
+  if (form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!form.checkValidity()){
+        form.reportValidity();
+        return;
+      }
+      var name = form.name.value.trim();
+      var level = form.level.value;
+      var mode = form.mode.value;
+      var message = form.message.value.trim();
+      var text = 'Hi Ivan, my name is ' + name + '.\n' +
+                 'Experience: ' + level + '\n' +
+                 'Interested in: ' + mode + '\n' +
+                 'Goal: ' + message;
+      var url = 'https://wa.me/393456378932?text=' + encodeURIComponent(text);
+      formMsg.textContent = 'Opening WhatsApp…';
+      formMsg.classList.add('show');
+      window.open(url, '_blank', 'noopener');
+    });
+  }
+</script>
 
 </body>
 </html>
